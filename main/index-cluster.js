@@ -4,10 +4,23 @@ process.env.UV_THREADPOOL_SIZE = 1;
 // (by default they can all access the defaut 4 threads)
 // doing so allow us to understand more easily the result of our testing with ab
 const cluster = require('cluster');
+const os = require('os');
 
 if(cluster.isMaster) {
-    cluster.fork();
-    cluster.fork();
+    const cpuCount = os.cpus().length;
+    console.log('cpu counts is ', cpuCount);
+    for(let i = 0 ; i < cpuCount; i++) {
+        cluster.fork();
+    }
+
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
+    //cluster.fork();
 } else {
     const express = require('express');
     const app = express();
