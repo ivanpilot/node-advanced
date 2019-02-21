@@ -26,7 +26,7 @@ class CustomPage {
 
         await this.page.setCookie({ name: 'session', value: session })
         await this.page.setCookie({ name: 'session.sig', value: sig })
-        await this.page.goto('localhost:3000')
+        await this.page.goto('localhost:3000/blogs')
         // the reason we go to the same page is because once the cookie is set we need to mechanically send a new request to the server to visit the page like it is the case in reality with oauth
 
         await this.page.waitFor('a[href="/auth/logout"]');
