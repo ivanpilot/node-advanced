@@ -17,4 +17,4 @@ install:
 script:
     - nohup npm run start --prefix advancedStarter &
     - sleep 3
-    - npm run test --prefix advanceStarter
+    - npm run test --prefix advancedStarter
