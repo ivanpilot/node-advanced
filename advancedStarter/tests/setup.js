@@ -2,6 +2,7 @@
 
 // however, by default, jest doesn't automatically look for this file so we need to force it to do so. and that is done inside the package.json file with "jest": {"setupTestFrameworkScriptFile": "./tests/setup.js"}
 
+jest.setTimeout(30000);
 require('../models/User');
 //just by requiring the file, this file will be automatically executed
 const mongoose = require('mongoose');
