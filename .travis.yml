@@ -15,6 +15,6 @@ install:
     - npm install --prefix advancedStarter
     - npm run build --prefix advancedStarter
 script:
-    - nohup npm run start &
+    - nohup npm run start --prefix advancedStarter &
     - sleep 3
-    - npm run test
+    - npm run test --prefix advanceStarter
